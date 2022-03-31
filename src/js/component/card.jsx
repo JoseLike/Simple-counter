@@ -1,16 +1,12 @@
 import React from "react";
 
 const Tarjeta = () => {
-    return(
-	<div className="card text-white bg-dark mb-3">
-		<div className="card-header">Header</div>
-		<div className="card-body">
-			<h5 className="card-title">Dark card title</h5>
-			<p className="card-text">
-				Some quick example text to build on the card title and make up
-				the bulk of the card's content.
-			</p>
+	return (
+		<div className="card text-white bg-dark mb-3 me-2 col-1 border border-2">
+			<div className="card-body">
+				<h1 className="card-title m-auto">0</h1>
+			</div>
 		</div>
-	</div>
-    )};
+	);
+};
 export default Tarjeta;
