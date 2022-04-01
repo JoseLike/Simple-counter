@@ -1,12 +1,18 @@
 import React from "react";
+import PropTypes from "prop-types";
 
-const Tarjeta = () => {
+const Tarjeta = (props) => {
 	return (
-		<div className="card text-white bg-dark mb-3 me-2 col-1 border border-2">
-			<div className="card-body">
-				<h1 className="card-title m-auto">0</h1>
+		<div className="d-flex card text-white bg-dark col-1 mb-3 me-2">
+			<div className="d-flex card-body justify-content-center">
+				<h1 className="card-title">{props.timer}</h1>
 			</div>
 		</div>
 	);
 };
+
+Tarjeta.propTypes = {
+	timer: PropTypes.number,
+};
+
 export default Tarjeta;
