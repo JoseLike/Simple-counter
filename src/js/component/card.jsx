@@ -5,14 +5,14 @@ const Tarjeta = (props) => {
 	return (
 		<div className="d-flex card text-white bg-dark col-1 mb-3 me-2">
 			<div className="d-flex card-body justify-content-center">
-				<h1 className="card-title">{props.timer}</h1>
+				<h1 className="card-title">{props.numero}</h1>
 			</div>
 		</div>
 	);
 };
 
 Tarjeta.propTypes = {
-	timer: PropTypes.number,
+	numero: PropTypes.number,
 };
 
 export default Tarjeta;
