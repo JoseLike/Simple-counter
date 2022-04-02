@@ -11,11 +11,8 @@ const Home = () => {
 
 	useEffect(() => {
 		const interval = setInterval(() => {
-			setSeconds((timer) => {if(timer==10){
-				timer =0
-			}else{
-				timer + 1
-			}});
+			setSeconds2((timer) => {if(timer <10){timer + 1}else{ timer =1}
+			;
 		}, 1000);
 		return () => clearInterval(interval);
 	}, []);
