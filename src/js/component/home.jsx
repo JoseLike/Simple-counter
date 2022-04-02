@@ -5,17 +5,44 @@ import Tarjeta from "./card.jsx";
 const Home = () => {
 	const [timer, setSeconds] = useState(0);
 	const [timer2, setSeconds2] = useState(0);
+	const [timer3, setSeconds3] = useState(0);
+	const [timer4, setSeconds4] = useState(0);
+	const [timer5, setSeconds5] = useState(0);
 
 	useEffect(() => {
 		const interval = setInterval(() => {
-			setSeconds((timer) => timer + 1);
+			setSeconds((timer) => {if(timer==10){
+				timer =0
+			}else{
+				timer + 1
+			}});
 		}, 1000);
-		interval = setInterval(() => {
+		return () => clearInterval(interval);
+	}, []);
+	useEffect(() => {
+		const interval2 = setInterval(() => {
 			setSeconds2((timer2) => timer2 + 1);
 		}, 10000);
-		return () => clearInterval(interval, interval2);
+		return () => clearInterval(interval2);
 	}, []);
-
+	useEffect(() => {
+		const interval3 = setInterval(() => {
+			setSeconds3((timer3) => timer3 + 1);
+		}, 100000);
+		return () => clearInterval(interval3);
+	}, []);
+	useEffect(() => {
+		const interval4 = setInterval(() => {
+			setSeconds4((timer4) => timer4 + 1);
+		}, 1000000);
+		return () => clearInterval(interval4);
+	}, []);
+	useEffect(() => {
+		const interval5 = setInterval(() => {
+			setSeconds5((timer5) => timer5 + 1);
+		}, 10000000);
+		return () => clearInterval(interval5);
+	}, []);
 
 	return (
 		<div>
@@ -28,10 +55,10 @@ const Home = () => {
 							</h5>
 						</div>
 					</div>
-					<Tarjeta numero={timer} />
+					<Tarjeta numero={timer5} />
+					<Tarjeta numero={timer4} />
+					<Tarjeta numero={timer3} />
 					<Tarjeta numero={timer2} />
-					<Tarjeta numero={timer} />
-					<Tarjeta numero={timer} />
 					<Tarjeta numero={timer} />
 				</div>
 			</div>
