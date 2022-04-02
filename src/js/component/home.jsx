@@ -4,14 +4,18 @@ import Tarjeta from "./card.jsx";
 //create your first component
 const Home = () => {
 	const [timer, setSeconds] = useState(0);
+	const [timer2, setSeconds2] = useState(0);
 
 	useEffect(() => {
 		const interval = setInterval(() => {
 			setSeconds((timer) => timer + 1);
 		}, 1000);
-		console.log(timer);
-		return () => clearInterval(interval);
+		interval = setInterval(() => {
+			setSeconds2((timer2) => timer2 + 1);
+		}, 10000);
+		return () => clearInterval(interval, interval2);
 	}, []);
+
 
 	return (
 		<div>
@@ -25,7 +29,7 @@ const Home = () => {
 						</div>
 					</div>
 					<Tarjeta numero={timer} />
-					<Tarjeta numero={timer} />
+					<Tarjeta numero={timer2} />
 					<Tarjeta numero={timer} />
 					<Tarjeta numero={timer} />
 					<Tarjeta numero={timer} />
