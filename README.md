@@ -34,15 +34,16 @@ $ npm install
 ## Estructura y explicación del codigo ⚙️
 
 * La estructura del ejercicio se basa en componentes jsx de React.
-* Sergi realiza los componentes cards y footes (.jsx) y Jose Luis hace lo mismo con Navbar y Jumbotron.
-* Todos los componentes se importan en Home.jsx y se insertan en el componente Home. Se utilizan divs para organizar los componentes.
+* El componente principal es Tarjeta basadas en el componente del archivo card.jsx. Este componenete es una card de Bootstrap negra con un nico componente el cual es un prop de tipo number, que se pasara en el archivo home.jsx
+* El archivo home.jsx. Dentro del componenete Home se ejecuta todo el codigo js para hacer funcionar el proyecto. Se utilizan los hooks de React (useState y useEffect). Se declara la variable "timer" dentro del hook usestate. Esta variable almacenara los segundos desde el renderizado de la pagina.
+* el hook useEffect ejecutara una sola vez el comienzo del contador. Dentro del mismo se le ordena que cada 1000 milisegundos se sume 1 a la variable timer. O lo que es lo mismo, que se sumen los segundos. clearInterval limpia la accion de intervalo continuamente para que se sigan sumando segundos.
+* Por ultimo en home.jsx se pasa la variable timer como prop en el componente Tarjeta. Este se divide entre lo que seria su posicion (cientos, miles, etc) y se saca el resto entre 10 para conseguir el intervalo 0-9.
 * Finalmente en Index.js se importa Home y se renderiza.
 
 
 ## Autor ✒️
 
 * **Jose Luis Gil** - *Navbar and Jumbotron* - [JoseLike](https://github.com/JoseLike)
-* **Sergi Madrigal** - *Cards and footer* - [Lvsyan](https://github.com/Lvsyan)
 
 También puedes mirar la lista de todos los [contribuyentes](https://github.com/JoseLike/Simple-counter) quíenes han participado en este 
 

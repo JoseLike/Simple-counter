@@ -5,10 +5,9 @@ import Tarjeta from "./card.jsx";
 const Home = () => {
 	const [timer, setSeconds] = useState(0);
 
-
 	useEffect(() => {
 		const interval = setInterval(() => {
-			setSeconds((timer) => timer+1)
+			setSeconds((timer) => timer + 1);
 		}, 1000);
 		return () => clearInterval(interval);
 	}, []);
@@ -24,11 +23,11 @@ const Home = () => {
 							</h5>
 						</div>
 					</div>
-					<Tarjeta numero={timer5} />
-					<Tarjeta numero={timer4} />
-					<Tarjeta numero={timer3} />
-					<Tarjeta numero={timer2} />
-					<Tarjeta numero={timer} />
+					<Tarjeta numero={Math.floor((timer / 10000) % 10)} />
+					<Tarjeta numero={Math.floor((timer / 1000) % 10)} />
+					<Tarjeta numero={Math.floor((timer / 100) % 10)} />
+					<Tarjeta numero={Math.floor((timer / 10) % 10)} />
+					<Tarjeta numero={timer % 10} />
 				</div>
 			</div>
 		</div>
